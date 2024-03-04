@@ -9,7 +9,8 @@ function generatePassword() {
   const lowercaseCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
   //initialise variables: password, length of password and booleans of what characters should be included
-  let length, password, lowercase, uppercase, nums, special;
+  let length, lowercase, uppercase, nums, special;
+  password = '';
   //array to keep track of which are included to be used when generating 
   //'l', 'u', 'n', 's' will represent lowercase, uppercase, numbers. and special characters, respectively
   let include = [];
@@ -53,16 +54,26 @@ function generatePassword() {
     if (type == 'l') {
       selection = Math.random() * lowercaseCharacters.length;
       password += lowercaseCharacters.at(selection);
-    } else if (type == 'u') {
+    }
+
+    if (type == 'u') {
       selection = Math.random() * uppercaseCharacters.length;
       password += uppercaseCharacters.at(selection);
-    } else if (type == 'n') {
+    }
+
+    if (type == 'n') {
       selection = Math.random() * numbers.length;
       password += numbers.at(selection);
-    } else if (type == 's') {
+    }
+
+    if (type == 's') {
       selection = Math.random() * specialCharacters.length;
       password += specialCharacters.at(selection);
     }
+  }
+
+  if (password == '') {
+    password = 'Error: no characters selected.'
   }
 
   return password;
