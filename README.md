@@ -17,6 +17,7 @@ When the user presses the button, they are to be presented with several prompts:
 3. Should the password include uppercase letters (A, B, C, D...)?
 4. Should the password include numbers? (1, 2, 3, 4...)
 5. Should the password include special characters? (!, @, #, $...)
+
 After the final prompt is filled, a password is to be generated with the selected criteria.
 
 The only issue I experienced was with manipulating the output window of the program. I did
